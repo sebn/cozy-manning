@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <table id="productTable">
+        <tbody>
+            <tr class="license-row" is-meap="true" is-book="true" is-video="false">
+                <td class="product-title-column" data-sort="MEAP Book 1">
+                    <div class="col-xs-2 col-md-1 product-cover-image-column">
+                        <a href="/books/meap-book-1">
+                            <img class="product-cover-image img-responsive lazyloaded"
+                                data-src="https://images.manning.com/111/111/resize/book/1/1111111-1111-1111-1111-111111111111/meap_book_1.png"
+                                src="https://images.manning.com/111/111/resize/book/1/1111111-1111-1111-1111-111111111111/meap_book_1.png">
+                        </a>
+                    </div>
+                    <div class="col-xs-10 col-md-11 product-data-column">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-8">
+                                <div class="product-title">
+                                    MEAP Book 1
+                                    <span class="badge-space">
+                                        <a href="https://livebook.manning.com/book/meap-book-1?origin=dashboard">
+                                            <img class=" lazyloaded" data-src="/assets/livebook-badge.svg"
+                                                src="/assets/livebook-badge.svg">
+                                        </a>
+                                        <img class=" lazyloaded" data-src="/assets/meap-badge.svg"
+                                            src="/assets/meap-badge.svg">
+                                    </span>
+                                </div>
+                                <div class="product-authorship">Jane Doe</div>
+                                <div class="meap-last-updated">last update: 2020-03-10</div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-4 text-right control-column">
+                                <div class="links">
+                                    <a href="https://livebook.manning.com/#!/book/meap-book-1/discussion"
+                                        data-toggle="tooltip" data-placement="left" title=""
+                                        data-original-title="view forum"><span
+                                            class="fas fa-comments fa-file-download"></span></a>
+                                </div>
+                                <div class="downloads-and-more">
+                                    <a href="https://livebook.manning.com/book/meap-book-1?origin=dashboard">
+                                        liveBook
+                                    </a>
+                                    <div data-toggle="modal" data-target="#zipDownloadModal-meapbook1"
+                                        data-backdrop="static" data-keyboard="false">
+                                        <span class="fas fa-download fa-file-download"></span>
+                                        download
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="zipDownloadModal-meapbook1" class="modal download-modal fade" tabindex="-1" role="dialog"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content modal-padding">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                                        <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+                                    </button>
+                                    <h4 class="modal-title proper-name">Get your content for <em>MEAP Book 1</em></h4>
+                                </div>
+                                <form action="/dashboard/download?id=downloadForm-meapbook1" method="post"
+                                    class="download-form" name="downloadForm-meapbook1"
+                                    onsubmit="document.getElementById('download-submit').disabled=true; return true;"
+                                    id="downloadForm-meapbook1">
+                                    <input type="hidden" id="dropbox-meapbook1" name="dropbox" value="false">
+                                    <div class="modal-body">
+                                        <div class="download-selection">
+                                            <label>eBook Files:</label>
+                                            <div>
+                                                <label>
+                                                    <input type="checkbox" name="meapbook1-restrictedDownloadIds"
+                                                        value="1111">
+                                                    pdf
+                                                </label>
+                                                <input type="hidden" name="1111" value="1111111" id="1111">
+                                            </div>
+                                        </div>
+                                        <div class="prepare-download" hidden="">
+                                            Some downloads may take several minutes to prepare before the download
+                                            begins,
+                                            hang
+                                            tight…
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" id="download-submit" class="btn btn-primary download-btn"
+                                            onclick="$('#dropbox-meapbook1').val(false);" disabled="disabled"><span
+                                                class="fas fa-file-download" aria-hidden="true"></span>download</button>
+                                        <input type="hidden" name="productExternalId" value="meapbook1"
+                                            id="productExternalId">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="license-row" is-meap="false" is-book="false" is-video="false">
+                <td class="product-title-column" data-sort="Downloadable Product 2">
+                    <div class="col-xs-2 col-md-1 product-cover-image-column">
+                        <a href="/books/downloadable-product-2">
+                            <img class="product-cover-image img-responsive lazyloaded"
+                                data-src="https://images.manning.com/222/222/resize/book/2/2222222-2222-2222-2222-222222222222/Downloadable_Product_2.png"
+                                src="https://images.manning.com/222/222/resize/book/2/2222222-2222-2222-2222-222222222222/Downloadable_Product_2.png">
+                        </a>
+                    </div>
+                    <div class="col-xs-10 col-md-11 product-data-column">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-8">
+                                <div class="product-title">
+                                    Downloadable Product 2
+                                    <span class="badge-space">
+                                        <a
+                                            href="https://livebook.manning.com/book/downloadable-product-2?origin=dashboard">
+                                            <img class=" lazyloaded" data-src="/assets/livebook-badge.svg"
+                                                src="/assets/livebook-badge.svg">
+                                        </a>
+                                    </span>
+                                </div>
+                                <div class="product-authorship">Mr Smith<br><i>Foreword by: Morpheus</i></div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-4 text-right control-column">
+                                <div class="links">
+                                    <a href="https://manning-content.s3.amazonaws.com/download/2/2222222-2222-2222-2222-222222222222/frdownloadable-product-2.zip"
+                                        target="_blank" title="" data-toggle="tooltip" data-placement="left"
+                                        data-original-title="download code samples"><span
+                                            class="far fa-file-code"></span></a>
+                                    <a href="https://forums.manning.com/forums/downloadable-product-2"
+                                        data-toggle="tooltip" data-placement="left" title=""
+                                        data-original-title="view forum"><span
+                                            class="fas fa-comments fa-file-download"></span></a>
+                                </div>
+                                <div class="downloads-and-more">
+                                    <a href="https://livebook.manning.com/book/downloadable-product-2?origin=dashboard">
+                                        liveBook
+                                    </a>
+                                    <div data-toggle="modal" data-target="#zipDownloadModal-mrsmith"
+                                        data-backdrop="static" data-keyboard="false"><span
+                                            class="fas fa-download fa-file-download"></span>
+                                        download
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="zipDownloadModal-mrsmith" class="modal download-modal fade" tabindex="-1" role="dialog"
+                        aria-hidden="true" style="display: none;">
+                        <div class="modal-dialog">
+                            <div class="modal-content modal-padding">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="close"
+                                        style="">
+                                        <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+                                    </button>
+                                    <h4 class="modal-title proper-name">Get your content for <em>Downloadable Product
+                                            2</em></h4>
+                                </div>
+                                <form action="/dashboard/download?id=downloadForm-mrsmith" method="post"
+                                    class="download-form" name="downloadForm-mrsmith"
+                                    onsubmit="document.getElementById('download-submit').disabled=true; return true;"
+                                    id="downloadForm-mrsmith">
+                                    <input type="hidden" id="dropbox-mrsmith" name="dropbox" value="false">
+                                    <div class="modal-body">
+                                        <div class="download-selection" style="">
+                                            <label>eBook Files:</label>
+                                            <div>
+                                                <label>
+                                                    <input type="checkbox" name="mrsmith-restrictedDownloadIds"
+                                                        value="2222">
+                                                    pdf
+                                                </label>
+                                                <input type="hidden" name="2222" value="2222222" id="2222">
+                                            </div>
+                                            <div>
+                                                <label>
+                                                    <input type="checkbox" name="mrsmith-restrictedDownloadIds"
+                                                        value="3333">
+                                                    epub
+                                                </label>
+                                                <input type="hidden" name="3333" value="3333333" id="3333">
+                                            </div>
+                                            <div>
+                                                <label>
+                                                    <input type="checkbox" name="mrsmith-restrictedDownloadIds"
+                                                        value="4444">
+                                                    kindle
+                                                </label>
+                                                <input type="hidden" name="4444" value="4444444" id="4444">
+                                            </div>
+                                        </div>
+                                        <div class="prepare-download" style="display: none;" hidden="">
+                                            Some downloads may take several minutes to prepare before the download
+                                            begins,
+                                            hang
+                                            tight…
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" id="download-submit" class="btn btn-primary download-btn"
+                                            onclick="$('#dropbox-mrsmith').val(false);"><span
+                                                class="fas fa-file-download" aria-hidden="true"></span>download</button>
+                                        <input type="hidden" name="productExternalId" value="mrsmith"
+                                            id="productExternalId">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
