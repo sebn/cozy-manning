@@ -22,7 +22,9 @@ var start = async fields => {
   const downloads = scrapeDownloads($, products)
 
   log('info', 'Saving files...')
-  saveFiles(downloads, fields)
+  saveFiles(downloads, fields, {
+    contentType: true
+  })
 }
 
 var login = fields =>
