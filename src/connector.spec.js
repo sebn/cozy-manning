@@ -29,7 +29,7 @@ const products = [
   {
     downloadSelector: '#zipDownloadModal-mrsmith',
     externalId: 'mrsmith',
-    lastUpdated: '',
+    lastUpdated: undefined,
     title: 'Downloadable Product 2'
   }
 ]
@@ -43,11 +43,33 @@ describe('connector', () => {
     })
   })
 
+  describe('.parseLastUpdated()', () => {
+    test('returns a valid date string', () => {
+      expect(connector.parseLastUpdated('last update: 2020-03-10')).toEqual(
+        '2020-03-10'
+      )
+    })
+
+    test('ignores a broken date string', () => {
+      expect(connector.parseLastUpdated('last update: 2020-13-32')).toEqual(
+        undefined
+      )
+    })
+
+    test('ignores a completely broken input', () => {
+      expect(connector.parseLastUpdated('invalid')).toEqual(undefined)
+    })
+
+    test('ignores an empty input', () => {
+      expect(connector.parseLastUpdated('')).toEqual(undefined)
+    })
+  })
+
   describe('.scrapeDownloads()', () => {
     test('returns the list of downloads in a format compatible with saveFiles()', () => {
       expect(connector.scrapeDownloads($, products)).toEqual([
         {
-          filename: 'MEAP Book 1.pdf',
+          filename: 'MEAP Book 1.2020-03-10.pdf',
           fileurl:
             'https://www.manning.com/dashboard/download?id=downloadForm-meapbook1',
           requestOptions: {
@@ -116,7 +138,7 @@ describe('connector', () => {
     test('returns a list for a single download', () => {
       expect(connector.scrapeDownloadsByProduct($, products[0])).toEqual([
         {
-          filename: 'MEAP Book 1.pdf',
+          filename: 'MEAP Book 1.2020-03-10.pdf',
           fileurl:
             'https://www.manning.com/dashboard/download?id=downloadForm-meapbook1',
           requestOptions: {

@@ -50,11 +50,7 @@ var scrapeProducts = $ => {
       title: '.product-title',
       lastUpdated: {
         sel: '.meap-last-updated',
-        parse: str =>
-          str
-            .split(':')
-            .pop()
-            .trim()
+        parse: parseLastUpdated
       },
       downloadSelector,
       externalId: {
@@ -64,6 +60,14 @@ var scrapeProducts = $ => {
     },
     '#productTable tr'
   )
+}
+
+var parseLastUpdated = str => {
+  const datestr = str
+    .split(':')
+    .pop()
+    .trim()
+  if (Date.parse(datestr)) return datestr
 }
 
 var scrapeDownloads = ($, products) =>
@@ -82,7 +86,7 @@ var scrapeDownloadsByProduct = ($, product) => {
 
 var scrapeDownloadById = ($form, product) => id => ({
   fileurl: baseUrl + $form.attr('action'),
-  filename: `${product.title}.${downloadExt($form, id)}`,
+  filename: downloadFilename($form, product, id),
   requestOptions: {
     method: $form.attr('method'),
     form: {
@@ -91,6 +95,11 @@ var scrapeDownloadById = ($form, product) => id => ({
     }
   }
 })
+
+var downloadFilename = ($form, product, id) =>
+  `${product.title}${downloadSuffix(product)}.${downloadExt($form, id)}`
+
+var downloadSuffix = ({ lastUpdated }) => (lastUpdated ? `.${lastUpdated}` : '')
 
 var downloadExt = ($form, id) => {
   const format = $form
@@ -135,6 +144,7 @@ module.exports = {
   formData,
   loadDashboard,
   login,
+  parseLastUpdated,
   scrapeProducts,
   scrapeDownloadById,
   scrapeDownloadIds,
