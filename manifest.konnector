@@ -1,13 +1,13 @@
 {
-  "version": "1.0.0",
-  "name": "Connector template",
+  "version": "0.1.0",
+  "name": "Manning Publications",
   "type": "konnector",
   "language": "node",
   "icon": "icon.png",
-  "slug": "template",
-  "source": "git@github.com:konnectors/template.git",
+  "slug": "manning",
+  "source": "git@github.com:sebn/cozy-manning.git",
   "editor": "Cozy",
-  "vendor_link": "Link to the target website",
+  "vendor_link": "https://www.manning.com/",
   "categories": ["other"],
   "fields": {
     "login": {
@@ -24,16 +24,10 @@
     }
   },
   "data_types": [
-    "bill"
+    "book"
   ],
   "screenshots": [],
   "permissions": {
-    "bank operations": {
-      "type": "io.cozy.bank.operations"
-    },
-    "bills": {
-      "type": "io.cozy.bills"
-    },
     "files": {
       "type": "io.cozy.files"
     },
@@ -43,23 +37,17 @@
     }
   },
   "developer": {
-    "name": "Cozy Cloud",
-    "url": "https://cozy.io"
+    "name": "sebn",
+    "url": "https://github.com/sebn/"
   },
   "langs": ["fr", "en"],
   "locales": {
     "fr": {
-      "short_description": "Récupère la liste de livres",
-      "long_description": "Récupère la liste de livre sur le site exemple",
+      "short_description": "Récupère vos livres",
+      "long_description": "Récupère vos livres numériques sur le site manning.com",
       "permissions": {
-        "bank operations": {
-          "description": "Utilisé pour relier les factures à des operations bancaires"
-        },
-        "bills": {
-          "description": "Utilisé pour sauver les données des factures"
-        },
         "files": {
-          "description": "Utilisé pour sauvegarder les factures"
+          "description": "Utilisé pour sauvegarder les livres"
         },
         "accounts": {
           "description": "Utilisé pour obtenir les données du compte"
@@ -67,17 +55,11 @@
       }
     },
     "en": {
-      "short_description": "Fetch a list of books",
-      "long_description": "Fetch a list of books from the example website",
+      "short_description": "Fetch your ebooks",
+      "long_description": "Fetch your ebooks from the manning.com website",
       "permissions": {
-        "bank operations": {
-          "description": "Required to link bank operations to bills"
-        },
-        "bills": {
-          "description": "Required to save the bills data"
-        },
         "files": {
-          "description": "Required to save the bills"
+          "description": "Required to save the books"
         },
         "accounts": {
           "description": "Required to get the account's data"
@@ -85,6 +67,5 @@
       }
     }
   },
-  "banksTransactionRegExp": "\\bbooks\\b",
   "manifest_version": "2"
 }
