@@ -18,6 +18,7 @@ const loadFixtureSync = filename =>
   )
 
 const $ = loadFixtureSync('dashboard.html')
+const $whatever = cheerio.load('<html><body></body></html>')
 
 const products = [
   {
@@ -37,6 +38,49 @@ const products = [
 // TESTS
 
 describe('connector', () => {
+  describe('.validateLogin()', () => {
+    const statusCode = 200
+
+    test('is true when the response href is the homepage', () => {
+      const fullResponse = {
+        request: { uri: { href: 'https://www.manning.com/' } }
+      }
+      expect(
+        connector.validateLogin(statusCode, $whatever, fullResponse)
+      ).toEqual(true)
+    })
+
+    test('is false otherwise', () => {
+      const fullResponse = {
+        request: { uri: { href: 'https://login.manning.com/login' } }
+      }
+      expect(
+        connector.validateLogin(statusCode, $whatever, fullResponse)
+      ).toEqual(false)
+    })
+  })
+
+  describe('.loginErrorMessage()', () => {
+    test('is the message string if any', () => {
+      const $ = cheerio.load(`
+        <html>
+          <body>
+            <div id="msg" class="errors">
+              The credentials you provided cannot be determined to be authentic.
+            </div>
+          </body>
+        </html>
+      `)
+      expect(connector.loginErrorMessage($)).toEqual(
+        'The credentials you provided cannot be determined to be authentic.'
+      )
+    })
+
+    test('is an empty string otherwise', () => {
+      expect(connector.loginErrorMessage($whatever)).toEqual('')
+    })
+  })
+
   describe('.scrapeProducts()', () => {
     test('returns the list of products', () => {
       expect(connector.scrapeProducts($)).toEqual(products)

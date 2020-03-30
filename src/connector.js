@@ -33,8 +33,23 @@ var login = fields =>
     formData: {
       username: fields.login,
       password: fields.password
-    }
+    },
+    validate: validateLogin
   })
+
+var validateLogin = (statusCode, $, fullResponse) => {
+  if (fullResponse.request.uri.href === 'https://www.manning.com/') {
+    return true
+  } else {
+    log('error', loginErrorMessage($))
+    return false
+  }
+}
+
+var loginErrorMessage = $ =>
+  $('.errors')
+    .text()
+    .trim()
 
 var loadDashboard = () => request(baseUrl + '/dashboard')
 
@@ -144,11 +159,13 @@ module.exports = {
   formData,
   loadDashboard,
   login,
+  loginErrorMessage,
   parseLastUpdated,
   scrapeProducts,
   scrapeDownloadById,
   scrapeDownloadIds,
   scrapeDownloads,
   scrapeDownloadsByProduct,
-  start
+  start,
+  validateLogin
 }
