@@ -1,13 +1,13 @@
 {
-  "name": "cozy-konnector-template",
-  "version": "1.0.0",
-  "description": "",
+  "name": "cozy-manning",
+  "version": "0.1.0",
+  "description": "Fetch your ebooks from the manning.com website",
   "repository": {
     "type": "git",
-    "url": "git@github.com:konnectors/template.git"
+    "url": "git@github.com:sebn/cozy-manning.git"
   },
   "keywords": [],
-  "author": "Cozy Cloud",
+  "author": "Sébastien Nicouleaud",
   "license": "AGPL-3.0",
   "main": "./src/index.js",
   "eslintConfig": {
